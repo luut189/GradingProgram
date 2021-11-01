@@ -8,73 +8,72 @@ public class cal implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		mainFrame a = new mainFrame();
 		
-		if(a.grade1.getText().isEmpty() || 
-				a.grade2.getText().isEmpty() || 
-				a.grade3.getText().isEmpty() || 
-				a.grade4.getText().isEmpty() ) 
+		if(mainFrame.grade1.getText().isEmpty() || 
+				mainFrame.grade2.getText().isEmpty() || 
+				mainFrame.grade3.getText().isEmpty() || 
+				mainFrame.grade4.getText().isEmpty() ) 
 		{
 			
-			a.aver.setText("You must enter your grades");
-			a.mark.setText("Invalid!");
+			mainFrame.aver.setText("You must enter your grades");
+			mainFrame.mark.setText("Invalid!");
 			
 		} else {
-			String grade1Text = a.grade1.getText();
-			String grade2Text = a.grade2.getText();
-			String grade3Text = a.grade3.getText();
-			String grade4Text = a.grade4.getText();
+			String grade1Text = mainFrame.grade1.getText();
+			String grade2Text = mainFrame.grade2.getText();
+			String grade3Text = mainFrame.grade3.getText();
+			String grade4Text = mainFrame.grade4.getText();
 			
 			sum = 0;
 			
-			a.grades[0] = Double.parseDouble(grade1Text);
-			a.grades[1] = Double.parseDouble(grade2Text);
-			a.grades[2] = Double.parseDouble(grade3Text);
-			a.grades[3] = Double.parseDouble(grade4Text);
+			mainFrame.grades[0] = Double.parseDouble(grade1Text);
+			mainFrame.grades[1] = Double.parseDouble(grade2Text);
+			mainFrame.grades[2] = Double.parseDouble(grade3Text);
+			mainFrame.grades[3] = Double.parseDouble(grade4Text);
 			
 			for(int i = 0; i < 4; i++) {
-				sum = sum + a.grades[i];
+				sum = sum + mainFrame.grades[i];
 			}
 			
-			aver = sum / a.grades.length;
+			aver = sum / mainFrame.grades.length;
 			
-			a.aver.setText("Your average grade is "+ aver +"");
+			mainFrame.aver.setText("Your average grade is "+ aver +"");
 			
 			if(aver <= 100 && aver >= 90) {
-				a.mark.setText("A+");
+				mainFrame.mark.setText("A+");
 				
 			} else if(aver <= 89 && aver >= 85) {
-				a.mark.setText("A");
+				mainFrame.mark.setText("A");
 				
 			} else if(aver <= 84 && aver >= 80) {
-				a.mark.setText("A-");
+				mainFrame.mark.setText("A-");
 									
 			} else if(aver <= 79 && aver >= 75) {
-				a.mark.setText("B+");
+				mainFrame.mark.setText("B+");
 				
 			} else if(aver <= 74 && aver >= 70) {
-				a.mark.setText("B");
+				mainFrame.mark.setText("B");
 				
 			} else if(aver <= 69 && aver >= 65) {
-				a.mark.setText("C+");
+				mainFrame.mark.setText("C+");
 				
 			} else if(aver <= 64 && aver >= 60) {
-				a.mark.setText("C");
+				mainFrame.mark.setText("C");
 				
 			} else if(aver <= 59 && aver >= 55) {
-				a.mark.setText("D+");
+				mainFrame.mark.setText("D+");
 				
 			} else if(aver <= 54 && aver >= 50) {
-				a.mark.setText("D");
+				mainFrame.mark.setText("D");
 				
 			} else if(aver <= 49 && aver >= 40) {
-				a.mark.setText("E");
+				mainFrame.mark.setText("E");
 				
 			} else if(aver <= 39 && aver >= 0){
-				a.mark.setText("F");
+				mainFrame.mark.setText("F");
 				
 			} else {
-				a.mark.setText("Invalid");
+				mainFrame.mark.setText("Invalid");
 			}
 		}
 		
